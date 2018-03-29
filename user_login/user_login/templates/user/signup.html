@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}User Sign Up {% endblock %}
+
+{% block content %}
+<div class = 'row'>
+
+    <div class = 'col-md-offset-3 col-md-6'>
+        <h3>User Signedup</h3>
+
+        {% from "_formmac.html" import render_field %}
+        <form method="POST" action = "{{ url_for('signup') }}" role = 'form'>
+            {%if error %}
+            <div class = 'error text-danger'> {{ error }}</div>
+            {% endif %}
+            {{ form.hidden_tag() }}
+
+            {{ render_field(form.firstname, class='form-control') }}
+            {{ render_field(form.lastname, class='form-control') }}
+            {{ render_field(form.email, class='form-control') }}
+            {{ render_field(form.username, class='form-control') }}
+            {{ render_field(form.password, class='form-control') }}
+            {{ render_field(form.check, class='form-control') }}
+
+            <button type="submit" class="btn btn-default">Signup</button>
+        </form>
+    </div>
+
+</div>
+{% endblock %}

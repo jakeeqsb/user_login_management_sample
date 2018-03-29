@@ -1,0 +1,13 @@
+
+SECRET_KEY = 'secret'
+DEUBG = True
+
+DB_USER = 'temp'
+DB_PASSWORD = '12345'
+DB_NAME = 'users'
+DB_HOST = 'localhost'
+
+DB_URI = 'mysql+pymysql://%s:%s@%s/%s' %(DB_USER,DB_PASSWORD,DB_HOST,DB_NAME)
+SQLALCHEMY_DATABASE_URI = DB_URI
+SQLALCHEMY_TRACK_MODIFICATIONS = True
+
